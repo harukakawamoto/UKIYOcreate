@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrapの導入 -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <!-- cssの適応 -->
+    <link rel="stylesheet" href="./src/css/style.css">
+    
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- header部分 -->
+    <header>
+        <div class="co-name">
+            <p>UKIYOcreate</p>
+        </div>
+        
+        <ul class="nav">
+            <li class="nav-item">
+            <a class="nav-link" href="#">BLOG</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">ABOUNT</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">LINKS</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">PROJECTS</a>
+            </li>
+        </ul>
+    </header>
+    <div class="image">
+        <img class="first_view" src="./src/first_view.jpeg" alt="ファーストビュー画像">
+    </div>
+    <div class="content-texts">
+        <p>
+            A few words about this blog platform, Ghost, and how this site was made
+        </p>
+    </div>
+    <div class="sub-text">
+        <p >whiy Ghost (& Figma) instead of Medium, WordPress or other options?</p>
+    </div>
+    <div class="sub-text-border"></div>
+    
+    <div class="contents">
+        <p class="all-articles">
+            All articles
+        </p>
+
+
+    </div>
+    
+    <!-- footer部分 -->
+    <footer class="footer ">
+        <div>
+            <p class="footer-ukiyo-text">UKIYOcreate</p>
+            <div class="footer-main-text">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas efficitur. in hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus.
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="link">
+                    <a href="#">Twitter</a>
+                </div>
+                <div class="link">
+                    <a href="#">LinkedIn</a>
+                </div>
+                <div class="link">
+                    <a href="#">RSS</a>
+                </div>
+            </div>
+            <p class="footer-info">©️ 2012-2020 Nordic Rose Co.<br>All rights reserverd</p>
+        </div>
+    </footer>
+
+    <!-- API取得部分 -->
+    <script src="https://unpkg.com/microcms-js-sdk@latest/dist/umd/microcms-js-sdk.js"></script>
+    <script>
+        const { createClient } = microcms;
+
+        // Initialize Client SDK.
+        const client = createClient({
+        serviceDomain: "ukiyo-test-blog",
+        apiKey: "1CdoKFONr4t66inzJ9GNc8kFcCmpjeRfJmdo"
+        
+        });
+    
+        client
+        .getObject({
+            endpoint: 'articles',
+            queries: { limit: 12}
+        })
+        .then(res => {
+                let contents = res.contents
+                // 親要素の取得
+                let element = document.getElementsByClassName('contents')
+                console.log(contents)
+                for(let i = 0; i < contents.length;i = i+2){
+                    // div要素とimg要素とp要素の生成
+                    let parentDivElement = document.createElement('div')
+                    let createDivElement1 = document.createElement('div')
+                    let createDivElement2 = document.createElement('div')
+                    let imgElement1 = document.createElement('img')
+                    let imgElement2 = document.createElement('img')
+                    let pElement1 = document.createElement('p')
+                    let pElement2 = document.createElement('p')
+                    
+                    parentDivElement.className = 'content'
+                    imgElement1.src = contents[i].eyecatch.url
+                    imgElement2.src = contents[i+1].eyecatch.url
+                    pElement1.textContent = contents[i].title
+                    pElement2.textContent = contents[i+1].title
+
+                    createDivElement1.appendChild(imgElement1)
+                    createDivElement1.appendChild(pElement1)
+                    createDivElement2.appendChild(imgElement2)
+                    createDivElement2.appendChild(pElement2)
+
+                    parentDivElement.appendChild(createDivElement1)
+                    parentDivElement.appendChild(createDivElement2)
+
+                    element[0].appendChild(parentDivElement)
+                }
+            }
+            
+            )
+        .catch((err) => console.error(err));
+
+    </script>
+</body>
+</html>
