@@ -1,6 +1,7 @@
 *{
     text-align: center;
     font-family: Verdana;
+    font-style: normal;
     margin:0;
     padding:0;
     
@@ -29,8 +30,6 @@ main{
     text-align: center;
 }
 .co-name{
-    font-family: 'Verdana';
-    font-style: normal;
     font-weight: 400;
     font-size: 36px;
     line-height:  170%;
@@ -44,8 +43,6 @@ main{
 }
 
 .nav-link{
-    font-family: 'Verdana';
-    font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 170%;
@@ -101,7 +98,6 @@ footer{
     margin-bottom: 44px;
 }
 .footer-ukiyo-text{
-    font-style: normal;
     font-weight: 400;
     font-size: 32px;
     line-height: 170%;
@@ -116,7 +112,6 @@ footer{
 .footer-main-text{
     width:488px;
     margin:auto;
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
@@ -128,7 +123,6 @@ footer{
 
 .footer-links{
     display:flex;
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 170%;
@@ -139,7 +133,6 @@ footer{
 }
 
 .footer-info{
-    font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 140%;
@@ -163,7 +156,6 @@ footer{
 
 .all-articles{
     margin-top:64px;
-    font-style: normal;
     font-weight: 400;
     font-size: 44px;
     line-height: 53px;
