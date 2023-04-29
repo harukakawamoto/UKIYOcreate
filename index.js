@@ -3,7 +3,8 @@ const { createClient } = microcms;
         // Initialize Client SDK.
         const client = createClient({
         serviceDomain: "ukiyo-test-blog",
-        apiKey: process.env.API_KEY
+        // apiKey: process.env.API_KEY
+        apiKey:"1CdoKFONr4t66inzJ9GNc8kFcCmpjeRfJmdo"
         });
     
         client
