@@ -3,14 +3,12 @@
     font-family: Verdana;
     font-style: normal;
     margin:0;
-    padding:0;
-    
+    padding:0;  
 }
 header{
     display: flex;
     height:134px;
     box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.16);
-
 }
 .nav{
     margin: 0 0 0 auto;
@@ -22,18 +20,15 @@ header{
     text-decoration: none;
     color:black;
 }
+
 .nav-item{
     margin:auto 36px;
 }
 
-main{
-    text-align: center;
-}
 .co-name{
     font-weight: 400;
     font-size: 36px;
     line-height:  170%;
-    /* or 61px */
     align-items: center;
     text-align: center;
     letter-spacing: 0.12em;
@@ -46,10 +41,8 @@ main{
     font-weight: 400;
     font-size: 20px;
     line-height: 170%;
-    /* identical to box height, or 34px */
     text-align: center;
     letter-spacing: 0.12em;
-
 }
 
 footer{
@@ -59,8 +52,8 @@ footer{
     color:white;
     padding-top:53px;
     padding-bottom: 78px;
-
 }
+
 .content-texts{
     text-align: center;
     margin:auto;
@@ -70,11 +63,8 @@ footer{
     width:858px;
     margin-bottom: 32px;
 }
-    
-    
 
 .sub-text{
-    
     margin:auto;
     font-weight: 400;
     font-size: 20px;
@@ -89,20 +79,19 @@ footer{
     width:640px;
     border-top: 2px solid black;
     margin-top: 34px;
-
 }
+
 .first_view{
     width:854px;
     height:553px;
     margin-top:76px;
     margin-bottom: 44px;
 }
+
 .footer-ukiyo-text{
     font-weight: 400;
     font-size: 32px;
     line-height: 170%;
-    /* or 54px */
-
     align-items: center;
     text-align: center;
     letter-spacing: 0.12em;
@@ -115,7 +104,6 @@ footer{
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
-    /* or 22px */
     margin-top:32px;
     margin-bottom:32px;
     text-align: center;
@@ -126,9 +114,6 @@ footer{
     font-weight: 400;
     font-size: 16px;
     line-height: 170%;
-    
-    /* or 27px */
-
     text-decoration-line: underline;
 }
 
@@ -146,10 +131,11 @@ footer{
     color:white;
     padding-bottom:54px;
 }
+
 .link {
     width: calc(100% / 3);
-    /* padding: 20px 10px; */
 }
+
 .link a{
     color:white;
 }
@@ -164,17 +150,20 @@ footer{
 
 .contents{
     margin:auto;
-    width:640px;
+    max-width:640px;
     text-align: center;
-}
-.content{
     display: flex;
-    text-align: center;
-    
+    flex-wrap: wrap;
 }
+
+.content{
+    text-align: center;
+    width:40%;
+    padding:0 14px;
+}
+
 .content img{
-    width:304px;
-    height:176px;
+    width:100%;
     padding-top:39px;
     padding-bottom:20px;
 }
@@ -182,15 +171,10 @@ footer{
 .content p{
     height:78px;
     width:262px;
-
     font-weight: 400;
     font-size: 22px;
     line-height: 120%;
-    text-align: center;
     padding-bottom:64px;
 }
 
-.content div{
-    padding:0 14px;
-    text-align: center;
-}
+
